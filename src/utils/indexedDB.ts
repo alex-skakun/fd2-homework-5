@@ -1,6 +1,6 @@
 export type DBMigration = (db: IDBDatabase) => void;
 
-export  const migrations: Array<DBMigration> = [
+export const migrations: Array<DBMigration> = [
     (db) => {
         db.createObjectStore('todos', {
             keyPath: 'id',
