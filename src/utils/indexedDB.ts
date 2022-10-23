@@ -1,14 +1,5 @@
 export type DBMigration = (db: IDBDatabase) => void;
 
-export  const migrations: Array<DBMigration> = [
-    (db) => {
-        db.createObjectStore('users', {
-            keyPath: 'id',
-            autoIncrement: true,
-        });
-    }
-];
-
 export function openDB(name: string, migrations: DBMigration[]): Promise<IDBDatabase> {
     return  new Promise<IDBDatabase>((resolve, reject) => {
         const request = indexedDB.open(name, migrations.length)

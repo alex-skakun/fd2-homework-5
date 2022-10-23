@@ -2,6 +2,7 @@ import { DisposableView } from '../types';
 import {appState, TodoStructure} from "./TodoModel";
 
 export  class TodoList {
+
   constructor(
       private  todoItems: TodoStructure[],
       private  type: 'Pending' | 'Finished'
